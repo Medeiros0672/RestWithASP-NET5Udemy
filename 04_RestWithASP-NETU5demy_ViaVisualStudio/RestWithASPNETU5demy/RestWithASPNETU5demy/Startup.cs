@@ -7,6 +7,8 @@ using Microsoft.Extensions.Hosting;
 using RestWithASPNETU5demy.Models.Context;
 using RestWithASPNETU5demy.Business;
 using RestWithASPNETU5demy.Business.Implementation;
+using RestWithASPNETU5demy.Repository.Implementation;
+using RestWithASPNETU5demy.Repository;
 
 namespace RestWithASPNETU5demy
 {
@@ -33,6 +35,7 @@ namespace RestWithASPNETU5demy
 
             //Injeção de dependência
             services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
+            services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
