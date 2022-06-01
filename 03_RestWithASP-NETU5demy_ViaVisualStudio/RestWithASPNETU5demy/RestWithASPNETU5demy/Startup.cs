@@ -28,6 +28,9 @@ namespace RestWithASPNETU5demy
             var connection = Configuration["OracleConnection:OracleConnectionString"];
             services.AddDbContext<OracleContext>(options => options.UseOracle(connection, b => b.UseOracleSQLCompatibility("11")));
 
+            //Versionamento API
+            services.AddApiVersioning();
+
             //Injeção de dependência
             services.AddScoped<IPersonService, PersonServiceImplementation>();
         }
